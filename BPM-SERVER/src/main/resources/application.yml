@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  # 工作流
+  activiti:
+    # 检查历史表是否存在
+    db-history-used: true # true:开启历史表
+    # 记录历史等级
+    history-level: full  # full:除了会保存audit级别的数据外，还会保存其他全部流程相关的细节数据，包括一些流程参数等
+    database-schema: mysql
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bpm_activiti?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true&nullCatalogMeansCurrent=true
+    username: root
+    password: root
